@@ -28,6 +28,7 @@ LinearLayout s;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        s=(LinearLayout)findViewById(R.id.s);
     }
     /**
      * when the button got clicked shows an alert dialog with  text
@@ -83,6 +84,7 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void randomcolor(View view) {
+        ad=new AlertDialog.Builder(this);
         ad.setMessage("random color");
         ad.setPositiveButton("random", new DialogInterface.OnClickListener() {
             @Override
@@ -110,6 +112,8 @@ LinearLayout s;
                 dialog.cancel();
             }
         });
+        AlertDialog adb=ad.create();
+        adb.show();
     }
 
     /**
@@ -118,6 +122,7 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void whiteop(View view) {
+        ad=new AlertDialog.Builder(this);
         ad.setMessage("set color");
         ad.setPositiveButton("random", new DialogInterface.OnClickListener() {
             @Override
@@ -157,7 +162,8 @@ LinearLayout s;
                 dialog.cancel();
             }
         });
-
+        AlertDialog adb=ad.create();
+        adb.show();
     }
     @Override
     /**
