@@ -4,12 +4,16 @@
  * alert dialog exercise
  */
 package com.example.dialogex;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -154,5 +158,32 @@ LinearLayout s;
             }
         });
 
+    }
+    @Override
+    /**
+     *creates option menu from the main xml resource general menu
+     * <p>
+     * @parm menu the menu
+     * @return true if menu created
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    /**
+     * when item selected goes to credits
+     * <p>
+     * @param item the item hat was chosen
+     * @return true if the operation succeed
+     */
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+       int id=item.getItemId();
+       if(id==R.id.credits){
+           Intent si= new Intent(this,credits.class);
+           startActivity(si);
+       }
+        return super.onOptionsItemSelected(item);
     }
 }
