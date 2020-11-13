@@ -15,6 +15,18 @@ public class credits extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
     }
+    /**
+     *creates option menu from the main xml resource general menu
+     * <p>
+     * @parm menu the menu
+     * @return true if menu created
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
     @Override
     /**
      * when item selected goes  back to first activity
