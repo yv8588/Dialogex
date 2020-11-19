@@ -22,7 +22,7 @@ import java.util.Random;
 import static android.graphics.Color.WHITE;
 
 public class MainActivity extends AppCompatActivity {
-AlertDialog.Builder ad;
+AlertDialog.Builder adb;
 LinearLayout s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,11 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void textad(View view) {
-        ad=new AlertDialog.Builder(this);
-        ad.setTitle("only text");
-        ad.setMessage("hi albert");
-        AlertDialog adb=ad.create();
-        adb.show();
+        adb=new AlertDialog.Builder(this);
+        adb.setTitle("only message");
+        adb.setMessage("hi albert");
+        AlertDialog ad=adb.create();
+        ad.show();
     }
     /**
      * when the button got clicked shows an alert dialog with image
@@ -50,11 +50,12 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void photo(View view) {
-        ad=new AlertDialog.Builder(this);
-        ad.setMessage("hi");
-        ad.setIcon(R.drawable.exercies);
-        AlertDialog adb=ad.create();
-        adb.show();
+        adb=new AlertDialog.Builder(this);
+        adb.setTitle("only photo");
+        adb.setMessage("only photo");
+        adb.setIcon(R.drawable.ic_android_black_24dp);
+        AlertDialog ad=adb.create();
+        ad.show();
     }
 
     /**
@@ -64,17 +65,18 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void button(View view) {
-        ad=new AlertDialog.Builder(this);
-        ad.setIcon(R.drawable.exercies);
-        ad.setMessage("hi");
-        ad.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+        adb=new AlertDialog.Builder(this);
+        adb.setTitle("button and message and photo");
+        adb.setMessage("hi");
+        adb.setIcon(R.drawable.ic_android_black_24dp);
+        adb.setPositiveButton("ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
             }
         });
-        AlertDialog adb=ad.create();
-        adb.show();
+        AlertDialog ad=adb.create();
+        ad.show();
     }
 
     /**
@@ -84,9 +86,10 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void randomcolor(View view) {
-        ad=new AlertDialog.Builder(this);
-        ad.setMessage("random color");
-        ad.setPositiveButton("random", new DialogInterface.OnClickListener() {
+        adb=new AlertDialog.Builder(this);
+        adb.setTitle("random color or out");
+        adb.setMessage("set background");
+        adb.setPositiveButton("random", new DialogInterface.OnClickListener() {
             @Override
         /**
           * when the ok got clicked on the dialog sets the screen at random color
@@ -100,7 +103,7 @@ LinearLayout s;
                 s.setBackgroundColor(color);
             }
         });
-        ad.setNegativeButton("out", new DialogInterface.OnClickListener() {
+        adb.setNegativeButton("out", new DialogInterface.OnClickListener() {
             @Override
             /**
              * when the out got clicked on the dialog get out
@@ -112,8 +115,8 @@ LinearLayout s;
                 dialog.cancel();
             }
         });
-        AlertDialog adb=ad.create();
-        adb.show();
+        AlertDialog ad=adb.create();
+        ad.show();
     }
 
     /**
@@ -122,9 +125,10 @@ LinearLayout s;
      * @param view the button that got clicked
      */
     public void whiteop(View view) {
-        ad=new AlertDialog.Builder(this);
-        ad.setMessage("set color");
-        ad.setPositiveButton("random", new DialogInterface.OnClickListener() {
+        adb=new AlertDialog.Builder(this);
+        adb.setTitle("random restart or out");
+        adb.setMessage("choose");
+        adb.setPositiveButton("random", new DialogInterface.OnClickListener() {
             @Override
             /**
              * when the ok got clicked on the dialog sets the screen at random color
@@ -138,7 +142,7 @@ LinearLayout s;
                 s.setBackgroundColor(color);
             }
         });
-        ad.setNeutralButton("restart", new DialogInterface.OnClickListener() {
+        adb.setNeutralButton("restart", new DialogInterface.OnClickListener() {
             @Override
             /**
              * when the reset  got clicked on the dialog sets background back to white
@@ -150,7 +154,7 @@ LinearLayout s;
                 s.setBackgroundColor(WHITE);
             }
         });
-        ad.setNegativeButton("out", new DialogInterface.OnClickListener() {
+        adb.setNegativeButton("out", new DialogInterface.OnClickListener() {
             @Override
             /**
              * when the out got clicked on the dialog get out
@@ -162,8 +166,8 @@ LinearLayout s;
                 dialog.cancel();
             }
         });
-        AlertDialog adb=ad.create();
-        adb.show();
+        AlertDialog ad=adb.create();
+        ad.show();
     }
     @Override
     /**
